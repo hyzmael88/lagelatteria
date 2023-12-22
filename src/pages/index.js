@@ -10,6 +10,9 @@ import { useState } from 'react'
 import Sombra1 from '@/components/Sombras/sombra1'
 import Sombra2 from '@/components/Sombras/Sombra2'
 import Piezas from '@/components/Piezas/Piezas'
+import Helado from '@/components/Helado'
+import Heladote from '@/components/Heladote'
+import { AnimatePresence } from 'framer-motion'
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -58,24 +61,34 @@ export default function Home() {
         </p>
         <div className='w-full  flex flex-row justify-start gap-4 items-center z-10'>
           {helados.map((helado, index) => (
-            <div key={index} className='w-[102px] h-[102px] relative cursor-pointer' onClick={() => setEleccion(helado)}>
-              <Image src={helado.image} alt={helado.name} className=' w-full h-full object-contain '/>
-            </div>
+           <Helado
+           key={index}
+            helado={helado}
+            eleccion={eleccion}
+            setEleccion={setEleccion}
+           />
           ))}
         </div>
 
             
 
       </div>
+        
       <div className='w-full h-full flex flex-col justify-center items-center'>
-        <Image src={eleccion.image} className='w-[615px] h-[612px] object-cover'/>
-      </div>
+      <AnimatePresence mode='wait'>
+                <Heladote key={eleccion.name} eleccion={eleccion} />
+                </AnimatePresence>
+           
+        </div>
       <Sombra1
       eleccion={eleccion}
       />
+       <AnimatePresence mode='wait'>
       <Piezas
+      key={eleccion.name}
       eleccion={eleccion}
       />
+      </AnimatePresence>
       <Sombra2
       eleccion={eleccion}
       />

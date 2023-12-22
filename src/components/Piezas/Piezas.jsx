@@ -6,6 +6,8 @@ import fresas from '../../assets/piezas/fresas.png'
 import pistaches from '../../assets/piezas/pistaches.png'
 import Image from 'next/image'
 
+import { motion } from 'framer-motion';
+
 const piezas = [
     chocolates,
     pistaches,
@@ -38,14 +40,19 @@ function Piezas({eleccion}) {
           }
         
         }, [eleccion])
-        
+
+       
 
         
     return (
-     <div className='w-[1128px] h-[482px] absolute top-[30%] -left-[17%] -rotate-[10deg] '>
-        <Image src={pieza} alt={eleccion?.name} className='w-full h-full object-contain' style={{ opacity: 0.2 }} />
-
-     </div>
+      <motion.div
+      className={`w-[1128px] h-[482px] absolute top-[30%] -left-[17%] -rotate-[10deg] transition-all duration-300 `}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+  >
+      <Image src={pieza} alt={eleccion?.name} className='w-full h-full object-contain' style={{ opacity: 0.2 }} />
+  </motion.div>
     )
 }
 
