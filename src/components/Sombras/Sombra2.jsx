@@ -10,7 +10,7 @@ function Sombra2({eleccion}) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1 }}
         />
       )}
       {eleccion?.name === 'Pistaccio' && (
@@ -19,7 +19,7 @@ function Sombra2({eleccion}) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1 }}
         />
       )}
       {eleccion?.name === 'Fresa' && (
@@ -28,7 +28,7 @@ function Sombra2({eleccion}) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1 }}
         />
       )}
       {eleccion?.name === 'Blueberry' && (
@@ -37,7 +37,7 @@ function Sombra2({eleccion}) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1.5 }}
+          transition={{ duration: 1 }}
         />
       )}
     </>
