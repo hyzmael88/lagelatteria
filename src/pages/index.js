@@ -35,7 +35,7 @@ const helados = [
     description: 'Fresa Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
     image: fresa,
     color: '#F67B59'
-    
+
   },
   {
     name: 'Blueberry',
@@ -49,58 +49,55 @@ const helados = [
 export default function Home() {
 
   const [eleccion, setEleccion] = useState(helados[0])
-  
+
   return (
-  <div className='w-full h-screen max-w-[1444px] mx-auto overflow-hidden relative '>
-    <Navbar/>
-    <div className='w-full h-full flex flex-row px-4'>
-      <div className='w-full h-full flex flex-col gap-y-8 mt-20  '>
-        <Image src={logo} alt='logo' width={1444} height={1080} layout='responsive' className='z-10'/>
-        <p className='font-montserrat font-400 text-white z-10 '>
-        {eleccion.description}
-        </p>
-        <div className='w-full  flex flex-row justify-start gap-4 items-center z-10'>
-          {helados.map((helado, index) => (
-           <Helado
-           key={index}
-            helado={helado}
-            eleccion={eleccion}
-            setEleccion={setEleccion}
-           />
-          ))}
+    <div className='w-full h-screen max-w-[1444px] mx-auto overflow-hidden relative '>
+      <Navbar />
+      <div className='w-full h-full flex flex-row px-4'>
+        <div className='w-full h-full flex flex-col gap-y-8 mt-20  '>
+          <Image src={logo} alt='logo' width={1444} height={1080} layout='responsive' className='z-10' />
+          <p className='font-montserrat font-400 text-white z-10 '>
+            {eleccion.description}
+          </p>
+          <div className='w-full  flex flex-row justify-start gap-4 items-center z-10'>
+            {helados.map((helado, index) => (
+              <Helado
+                key={index}
+                helado={helado}
+                eleccion={eleccion}
+                setEleccion={setEleccion}
+              />
+            ))}
+          </div>
         </div>
 
-            
+        <div className='w-full h-full flex flex-col justify-center items-center'>
+          <AnimatePresence mode='wait'>
+            <Heladote key={eleccion.name} eleccion={eleccion} />
+          </AnimatePresence>
 
-      </div>
-        
-      <div className='w-full h-full flex flex-col justify-center items-center'>
-      <AnimatePresence mode='wait'>
-                <Heladote key={eleccion.name} eleccion={eleccion} />
-                </AnimatePresence>
-           
         </div>
         <AnimatePresence mode='wait'>
-      <Sombra1
-      key={eleccion.name}
-      eleccion={eleccion}
-      />
-      </AnimatePresence>
-       <AnimatePresence mode='wait'>
-      <Piezas
-      key={eleccion.name}
-      eleccion={eleccion}
-      />
-      </AnimatePresence>
-      <AnimatePresence mode='wait'>
-      <Sombra2
-       key={eleccion.name}
-      eleccion={eleccion}
-      />
-      </AnimatePresence>
+          <Sombra1
+            key={eleccion.name}
+            eleccion={eleccion}
+          />
+        </AnimatePresence>
+        <AnimatePresence mode='wait'>
+          <Piezas
+            key={eleccion.name}
+            eleccion={eleccion}
+          />
+        </AnimatePresence>
+        <AnimatePresence mode='wait'>
+          <Sombra2
+            key={eleccion.name}
+            eleccion={eleccion}
+          />
+        </AnimatePresence>
+
+      </div>
 
     </div>
-
-  </div>
   )
 }
