@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 function Heladote({ eleccion }) {
   const variants = {
     initial: { x: "0", y: "70vh" },
-    out: { rotate: 720, x: "50vw", y: "0px", transition: { duration: 1 } },
+    out: { rotate: 720, x: "50vw", y: "-300px", transition: { duration: 1 } },
     in: { rotate: 360, y: 0, x: 0, transition: { duration: 1 } },
   };
   const [animate, setAnimate] = useState("in");

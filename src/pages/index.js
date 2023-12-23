@@ -77,24 +77,24 @@ export default function Home() {
           </AnimatePresence>
 
         </div>
-        <AnimatePresence mode='wait'>
-          <Sombra1
+{/*         <AnimatePresence mode='wait'>
+ */}          <Sombra1
             key={eleccion.name}
             eleccion={eleccion}
           />
-        </AnimatePresence>
-        <AnimatePresence mode='wait'>
+{/*         </AnimatePresence>
+ */}        <AnimatePresence mode='wait'>
           <Piezas
             key={eleccion.name}
             eleccion={eleccion}
           />
         </AnimatePresence>
-        <AnimatePresence mode='wait'>
+        {/* <AnimatePresence mode='wait'> */}
           <Sombra2
             key={eleccion.name}
             eleccion={eleccion}
           />
-        </AnimatePresence>
+        {/* </AnimatePresence> */}
 
       </div>
 
