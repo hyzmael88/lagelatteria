@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <div className='w-full h-[100px]   flex flex-row justify-between  items-center px-10'>
         <div className='w-full '>
-            <Image src={logonav} className='' />
+            <Image src={logonav} className=''alt='logo nav' />
 
         </div>
 

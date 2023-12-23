@@ -51,7 +51,7 @@ export default function Home() {
   const [eleccion, setEleccion] = useState(helados[0])
 
   return (
-    <div className='w-full h-screen max-w-[1444px] mx-auto overflow-hidden relative '>
+    <div className='w-full h-screen max-w-[1444px] min-w-[1444px] mx-auto overflow-hidden relative '>
       <Navbar />
       <div className='w-full h-full flex flex-row px-4'>
         <div className='w-full h-full flex flex-col gap-y-8 mt-20  '>
